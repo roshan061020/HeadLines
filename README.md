@@ -53,3 +53,10 @@ This application fetches and displays a list of news articles using the [NewsAPI
 - **iOS 17.0+**: The app uses SwiftUI and async/await features available in iOS 17 and later.
 - **Swift 5.10+**: (swiftlang-5.10.0.13 clang-1500.3.9.4)
 
+## Screenshots
+
+|App Icon| Headlines|Bookmarks Empty|Detail View|Detail View Bookmamrked|Bookmarks View with items|
+|:-:|:-|:-|:-|:-|:-|
+|<img src="https://github.com/roshan061020/HeadLines/blob/main/ShortNews/Screenshots%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-09-18%20at%2023.27.26.png" width="200" height="300">|<img src="https://github.com/roshan061020/HeadLines/blob/main/ShortNews/Screenshots%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-09-18%20at%2023.30.02.png" width="200" height="300">|<img src="https://github.com/roshan061020/HeadLines/blob/main/ShortNews/Screenshots%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-09-18%20at%2023.30.13.png" width="200" height="300">|<img src="https://github.com/roshan061020/HeadLines/blob/main/ShortNews/Screenshots%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-09-18%20at%2023.30.25.png" width="200" height="300">|<img src="https://github.com/roshan061020/HeadLines/blob/main/ShortNews/Screenshots%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-09-18%20at%2023.30.29.png" width="200" height="300">|<img src="https://github.com/roshan061020/HeadLines/blob/main/ShortNews/Screenshots%20%26%20Videos/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-09-18%20at%2023.30.45.png" width="200" height="300">|
+
+
