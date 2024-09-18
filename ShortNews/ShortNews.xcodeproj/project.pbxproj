@@ -22,6 +22,7 @@
 		5004B3C42C99C727002B77E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004B3C32C99C727002B77E0 /* NetworkService.swift */; };
 		5004B3C62C99C730002B77E0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004B3C52C99C730002B77E0 /* CoreDataManager.swift */; };
 		5004B3CF2C99CD2B002B77E0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004B3CE2C99CD2B002B77E0 /* APIError.swift */; };
+		5085223D2C9B5C0B00273255 /* NewsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5085223B2C9B5C0B00273255 /* NewsDataModel.xcdatamodeld */; };
 		50F443642C9A2EDB009A00EA /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F443632C9A2EDB009A00EA /* ImageExtension.swift */; };
 		50F443662C9A8CF6009A00EA /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F443652C9A8CF6009A00EA /* ArticleRepository.swift */; };
 		50F443682C9A8D5E009A00EA /* NamedNSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F443672C9A8D5E009A00EA /* NamedNSManagedObject+Extensions.swift */; };
@@ -35,7 +36,6 @@
 		50F443872C9AABB1009A00EA /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F443862C9AABB1009A00EA /* NewsServiceTests.swift */; };
 		50F4438B2C9B45CA009A00EA /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4438A2C9B45CA009A00EA /* NewsArticle.swift */; };
 		50F4438E2C9B4958009A00EA /* NewsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4438D2C9B4958009A00EA /* NewsRowView.swift */; };
-		50F443912C9B5147009A00EA /* NewsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50F4438F2C9B5147009A00EA /* NewsDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,8 @@
 		5004B3C12C99C71D002B77E0 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		5004B3C32C99C727002B77E0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5004B3C52C99C730002B77E0 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		5004B3CD2C99C85D002B77E0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5004B3CE2C99CD2B002B77E0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		5085223C2C9B5C0B00273255 /* NewsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsDataModel.xcdatamodel; sourceTree = "<group>"; };
 		50F443632C9A2EDB009A00EA /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		50F443652C9A8CF6009A00EA /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
 		50F443672C9A8D5E009A00EA /* NamedNSManagedObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedNSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 		50F443892C9AAE14009A00EA /* Headlines-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Headlines-Info.plist"; sourceTree = "<group>"; };
 		50F4438A2C9B45CA009A00EA /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		50F4438D2C9B4958009A00EA /* NewsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRowView.swift; sourceTree = "<group>"; };
-		50F443902C9B5147009A00EA /* NewsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +149,6 @@
 				5004B3A72C99C60F002B77E0 /* Models */,
 				5004B3A62C99C5FE002B77E0 /* App */,
 				5004B3822C99C5E3002B77E0 /* Preview Content */,
-				5004B3CD2C99C85D002B77E0 /* README.md */,
 				50F443632C9A2EDB009A00EA /* ImageExtension.swift */,
 			);
 			path = ShortNews;
@@ -235,7 +233,7 @@
 		5004B3D02C99CFA7002B77E0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				50F4438F2C9B5147009A00EA /* NewsDataModel.xcdatamodeld */,
+				5085223B2C9B5C0B00273255 /* NewsDataModel.xcdatamodeld */,
 				5004B3C52C99C730002B77E0 /* CoreDataManager.swift */,
 				50F443652C9A8CF6009A00EA /* ArticleRepository.swift */,
 				50F443672C9A8D5E009A00EA /* NamedNSManagedObject+Extensions.swift */,
@@ -421,7 +419,7 @@
 				50F443642C9A2EDB009A00EA /* ImageExtension.swift in Sources */,
 				50F443712C9A960C009A00EA /* PhaseAsyncImage.swift in Sources */,
 				50F4438B2C9B45CA009A00EA /* NewsArticle.swift in Sources */,
-				50F443912C9B5147009A00EA /* NewsDataModel.xcdatamodeld in Sources */,
+				5085223D2C9B5C0B00273255 /* NewsDataModel.xcdatamodeld in Sources */,
 				5004B3BD2C99C6EA002B77E0 /* BookmarkViewModel.swift in Sources */,
 				5004B3B02C99C663002B77E0 /* NewsDetailView.swift in Sources */,
 				5004B3B42C99C697002B77E0 /* BookmarkView.swift in Sources */,
@@ -756,14 +754,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		50F4438F2C9B5147009A00EA /* NewsDataModel.xcdatamodeld */ = {
+		5085223B2C9B5C0B00273255 /* NewsDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				50F443902C9B5147009A00EA /* NewsDataModel.xcdatamodel */,
+				5085223C2C9B5C0B00273255 /* NewsDataModel.xcdatamodel */,
 			);
-			currentVersion = 50F443902C9B5147009A00EA /* NewsDataModel.xcdatamodel */;
+			currentVersion = 5085223C2C9B5C0B00273255 /* NewsDataModel.xcdatamodel */;
 			name = NewsDataModel.xcdatamodeld;
-			path = /Users/rk/Desktop/ShortNews/ShortNews/CoreData/NewsDataModel.xcdatamodeld;
+			path = /Users/rk/Desktop/HeadLines/ShortNews/ShortNews/CoreData/NewsDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
