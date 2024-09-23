@@ -7,21 +7,6 @@
 
 import SwiftUI
 
-enum CategoryType: String, CaseIterable {
-    
-    case general = "General"
-    case business = "Business"
-    case technology = "Technology"
-    case health = "Health"
-    case sports = "Sports"
-    case entertainment = "Entertainment"
-    case science = "Science"
-    
-    var capitalised: String {
-        self.rawValue.capitalized
-    }
-}
-
 struct SelectableChipsView: View {
     var data: [String]
     @Binding var selectedChips: String
@@ -35,7 +20,7 @@ struct SelectableChipsView: View {
                         .foregroundStyle(.white)
                         .padding(10)
                         .padding(.horizontal, 10)
-                        .background(.blue)
+                        .background(.accent)
                         .clipShape(.capsule)
                         .onTapGesture {
                             withAnimation(.bouncy.delay(0.1)) {
@@ -49,14 +34,13 @@ struct SelectableChipsView: View {
 }
 
 struct ChipView: View {
-    var checkMark = "checkmark"
     let name: String
     let isSelected: Bool
     
     var body: some View {
         HStack{
             if isSelected{
-                Image(systemName: checkMark)
+                Image(systemName: StringConstants.systemImageName.checkmark)
             }
             Text(name)
         }

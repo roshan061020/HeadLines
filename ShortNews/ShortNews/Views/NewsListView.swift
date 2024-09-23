@@ -22,13 +22,14 @@ struct NewsListView: View {
                 }
                 
                 if viewModel.isLoading {
-                    ProgressView("Loading articles...")
+                    ProgressView("Loading \(viewModel.selectedCategory) articles...")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if viewModel.errorMessage != nil {
                     errorWithReTry
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if viewModel.articles.isEmpty {
-                    ContentNotAvailableView(systemImageName: "xmark.circle", message: "No articles available.")
+                    ContentNotAvailableView(systemImageName: StringConstants.systemImageName.xCircle,
+                                            message: "No articles available.")
                 } else {
                     List(viewModel.articles) { article in
                         NavigationLink {
@@ -51,31 +52,22 @@ struct NewsListView: View {
     
     var errorWithReTry: some View {
         VStack {
-            Text(viewModel.errorMessage ?? "")
-                .font(.title)
-                .foregroundColor(.red)
-                .padding()
-            Button("Retry") {
+            Button {
                 viewModel.articles = []
                 viewModel.fetchArticles()
+            } label: {
+                HStack {
+                    Image(systemName: StringConstants.systemImageName.retry)
+                    Text("Retry")
+                }
             }
-        }
-    }
-}
 
-
-struct ContentNotAvailableView: View {
-    var systemImageName: String
-    var message: String
-    var body: some View {
-        VStack {
-            Image(systemName: systemImageName)
-                .symbolRenderingMode(.multicolor)
+            Text(viewModel.errorMessage ?? "")
+                .font(.subheadline)
+                .foregroundColor(.red)
+                .padding()
+                .padding(.horizontal)
             
-            Text(message)
-                .font(.title)
         }
-        .foregroundColor(.secondary)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

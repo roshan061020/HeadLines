@@ -10,6 +10,7 @@ import SwiftUI
 struct NewsRowView: View {
    
     let article: NewsArticle
+    let publishedTextPrefix = "Published At:"
     
     var body: some View {
         VStack {
@@ -18,9 +19,11 @@ struct NewsRowView: View {
 
             VStack(alignment: .leading) {
                 Text(article.title).bold()
+                Text(article.subtitle ?? "")
+                    .lineLimit(3)
                 if let publishedAt = article.publishedAt {
                     HStack{
-                        Text("Published At:")
+                        Text(publishedTextPrefix)
                         Text(publishedAt.ToString())
                             .fontWeight(.bold)
                     }

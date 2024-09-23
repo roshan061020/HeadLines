@@ -50,6 +50,7 @@ final class NewsService: NewsServiceProtocol {
         let url = NewsAPI.buildURL(for: category,apiKey: apiKey)
         do {
             let response: NewsAPIResponse = try await networkService.fetchData(from: url)
+            // Filter out the article which are removed. 
             return response.articles.filter{$0.url != URL(string: "https://removed.com")}
         } catch let apiError as APIError {
             throw apiError

@@ -35,6 +35,7 @@ struct NewsDetailView: View {
                 VStack(spacing: 10) {
                     Text(newsDetailViewModel.article?.title ?? "").font(.title2).bold()
                     Text(newsDetailViewModel.article?.subtitle ?? "").font(.headline)
+                        .lineLimit(nil)
                     Text(newsDetailViewModel.article?.content ?? "").font(.subheadline)
                 }
                 .padding([.horizontal, .top])
@@ -51,8 +52,8 @@ struct NewsDetailView: View {
                         newsDetailViewModel.toggleBookmark()
                     }) {
                         newsDetailViewModel.article?.isBookmarked == true
-                        ? Image(systemName: "bookmark.fill")
-                        : Image(systemName: "bookmark")
+                        ? Image(systemName: StringConstants.systemImageName.bookmarkFill)
+                        : Image(systemName: StringConstants.systemImageName.bookmark)
                     }.padding()
                 }
             })
@@ -62,4 +63,3 @@ struct NewsDetailView: View {
         }
     }
 }
-

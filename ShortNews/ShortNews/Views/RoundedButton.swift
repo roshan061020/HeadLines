@@ -10,13 +10,14 @@ import SwiftUI
 struct RoundedButton: View {
     var title: String
     var action: ()->()
+    
     var body: some View {
         Button(action: action) {
             Text(title)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 .padding(10)
-                .background(Color.blue)
+                .background(.accent)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding([.horizontal, .bottom])
             

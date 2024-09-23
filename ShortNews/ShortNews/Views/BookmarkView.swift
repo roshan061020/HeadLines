@@ -12,33 +12,29 @@ struct BookmarkView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
                 if viewModel.isLoading {
                     ProgressView()
                 } else if !viewModel.bookmarkedArticles.isEmpty {
                     List(viewModel.bookmarkedArticles, id: \.url) { article in
                         NavigationLink(destination: NewsDetailView(articleURL: article.url)) {
                             HStack {
-                                
-                                AsyncImage(url: article.imageUrl) { image in
-                                    image.resizable()
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                .frame(width: 80, height: 80)
-                                .aspectRatio(contentMode: .fit)
-                                
-                                
-                                VStack(alignment: .leading) {
+                                PhaseAsyncImage(imageUrl: article.imageUrl,
+                                                imageWidth: 75,
+                                                height: 75,
+                                                contentMode: .fit)
+                                VStack(alignment: .leading, spacing: 20) {
                                     Text(article.title)
                                         .font(.headline)
                                     Text(article.category.capitalized)
                                         .font(.subheadline)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                        .foregroundStyle(.secondary)
                                 }
                             }
                         }
                     }
+                    .listStyle(.plain)
                 } else {
                     Text("No bookmarked articles.")
                         .foregroundColor(.gray)
