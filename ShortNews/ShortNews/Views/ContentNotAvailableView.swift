@@ -14,6 +14,7 @@ struct ContentNotAvailableView: View {
         VStack {
             Image(systemName: systemImageName)
                 .symbolRenderingMode(.multicolor)
+            
                 .resizable()
                 .frame(width: 75, height: 75)
             

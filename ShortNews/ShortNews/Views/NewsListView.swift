@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewsListView: View {
+    @Environment(\.colorScheme) var colorScheme
     @StateObject private var viewModel = NewsListViewModel()
     
     var body: some View {
@@ -64,7 +65,7 @@ struct NewsListView: View {
 
             Text(viewModel.errorMessage ?? "")
                 .font(.subheadline)
-                .foregroundColor(.red)
+                .foregroundColor(colorScheme == .dark ? .blue : .red)
                 .padding()
                 .padding(.horizontal)
             

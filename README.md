@@ -27,15 +27,14 @@ This application fetches and displays a list of news articles using the [NewsAPI
 
 - **Unit Tests**: Tests for ViewModels and services to ensure proper business logic and error handling. Similarly coverage could be improved by writing unit test cases for other pieces of code.
 - **UI Tests**: TODO
-- **Error Handling Tests**: Ensures the app handles network errors, API errors, and decoding errors gracefully.
 
 ### Implementation Choices
-
 - **NetworkService**: Designed to be generic and reusable, handling all network requests and error handling.
 - **Core Data Manager**: Manages all interactions with Core Data, providing methods to save and fetch articles.
 - **ViewModels**: Each view has a corresponding ViewModel that handles data fetching, error handling, and state management.
 - **Views**: SwiftUI views are modular and reusable. Components like `SelectableChipsView` others can be reused. 
 - **Async/Await**: Async/await is used for asynchronous network calls while observable objects are used to listen to state changes.
+- **Utilities**: Piece of codes which common and can be used throughout the code. 
 
 ### Additional Notes
 
@@ -43,14 +42,14 @@ This application fetches and displays a list of news articles using the [NewsAPI
 - **Offline Mode**: If the app cannot fetch articles from the API, it automatically loads articles from Core Data.
 - **API Key Handling**: Currently Api key is stored in plist file, which could be encrypted at build time by writing script for security. 
 
-### How to Run the App
+# How to Run the App
 
 1. Clone the repository.
 2. Open the project in Xcode.
 3. Build and run the app on a simulator or a device.
 
 ### Dependencies
-- **iOS 17.0+**: The app uses SwiftUI and async/await features available in iOS 17 and later.
+- **iOS 15.0+**: The app uses SwiftUI and async/await features available in iOS 15 and later.
 - **Swift 5.10+**: (swiftlang-5.10.0.13 clang-1500.3.9.4)
 
 ## Screenshots
