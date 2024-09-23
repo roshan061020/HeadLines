@@ -31,10 +31,8 @@ struct NewsDetailView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .background(.gray.opacity(0.8))
-                        
                     }
                 VStack(spacing: 10) {
-                    
                     Text(newsDetailViewModel.article?.title ?? "").font(.title2).bold()
                     Text(newsDetailViewModel.article?.subtitle ?? "").font(.headline)
                     Text(newsDetailViewModel.article?.content ?? "").font(.subheadline)
@@ -42,33 +40,25 @@ struct NewsDetailView: View {
                 .padding([.horizontal, .top])
             }
             
-            Button(action: {
+            RoundedButton(title: "Read More") {
                 if let url = newsDetailViewModel.article?.url {
                     UIApplication.shared.open(url)
                 }
-            }) {
-                Text("Read More")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue)
-                    .clipShape(.buttonBorder)
-                    .padding([.horizontal, .bottom])
             }
-        }
-        .toolbar(content: {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button(action: {
-                    newsDetailViewModel.toggleBookmark()
-                }) {
-                    newsDetailViewModel.article?.isBookmarked == true 
-                    ? Image(systemName: "bookmark.fill")
-                    : Image(systemName: "bookmark")
-                }.padding()
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        newsDetailViewModel.toggleBookmark()
+                    }) {
+                        newsDetailViewModel.article?.isBookmarked == true
+                        ? Image(systemName: "bookmark.fill")
+                        : Image(systemName: "bookmark")
+                    }.padding()
+                }
+            })
+            .task{
+                newsDetailViewModel.fetchArticle(for: articleURL)
             }
-        })
-        .task{
-            newsDetailViewModel.fetchArticle(for: articleURL)
         }
     }
 }

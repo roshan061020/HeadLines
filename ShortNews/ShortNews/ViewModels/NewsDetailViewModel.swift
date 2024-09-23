@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 class NewsDetailViewModel: ObservableObject {
     @Published var article: NewsArticle?
     @Published var isLoading: Bool = false

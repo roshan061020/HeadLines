@@ -35,7 +35,7 @@ struct SelectableChipsView: View {
                         .foregroundStyle(.white)
                         .padding(10)
                         .padding(.horizontal, 10)
-                        .background(.secondary)
+                        .background(.blue)
                         .clipShape(.capsule)
                         .onTapGesture {
                             withAnimation(.bouncy.delay(0.1)) {

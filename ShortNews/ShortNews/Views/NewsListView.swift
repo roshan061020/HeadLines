@@ -16,11 +16,9 @@ struct NewsListView: View {
                 SelectableChipsView(data: CategoryType.allCases.map{$0.rawValue},
                                     selectedChips: $viewModel.selectedCategory)
                 .padding()
-                .onChange(of: viewModel.selectedCategory) { oldValue,newValue in
-                    if oldValue != newValue{
+                .onChange(of: viewModel.selectedCategory) { _ in
                         viewModel.articles = []
                         viewModel.fetchArticles()
-                    }
                 }
                 
                 if viewModel.isLoading {
@@ -30,11 +28,7 @@ struct NewsListView: View {
                     errorWithReTry
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if viewModel.articles.isEmpty {
-                    ContentUnavailableView("No articles available.", systemImage: "xmark.circle")
-                        .symbolRenderingMode(.multicolor)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .font(.title)
-                        .foregroundStyle(.secondary)
+                    ContentNotAvailableView(systemImageName: "xmark.circle", message: "No articles available.")
                 } else {
                     List(viewModel.articles) { article in
                         NavigationLink {
@@ -69,3 +63,19 @@ struct NewsListView: View {
     }
 }
 
+
+struct ContentNotAvailableView: View {
+    var systemImageName: String
+    var message: String
+    var body: some View {
+        VStack {
+            Image(systemName: systemImageName)
+                .symbolRenderingMode(.multicolor)
+            
+            Text(message)
+                .font(.title)
+        }
+        .foregroundColor(.secondary)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
